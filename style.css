@@ -1,0 +1,301 @@
+/* =====================
+   RESET & GLOBAL
+===================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    background-image: url("IMAGE/Logo\\ Background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 900px;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #913131;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    height: 95px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: gold;
+    font-weight: bold;
+}
+
+.logo img.s {
+    width: 200px;
+    margin-right: -20px;
+}
+
+.logo-text {
+    font-size: 32px;
+    position: relative;
+    top: 6px;
+}
+
+/* MENU */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    margin-top: 50px;
+    margin-right: 35px;
+}
+
+.nav-menu a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* =====================
+   SECTION
+===================== */
+section {
+    padding: 40px 20px;
+    scroll-margin-top: 90px;
+}
+
+#beranda {
+    background-color: #f1f5f9;
+    text-align: center;
+}
+
+/* =====================
+   GALERI GRID
+===================== */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+/* =====================
+   CARD
+===================== */
+.car-card {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGE */
+.car-image {
+    position: relative;
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    padding: 20px;
+    text-align: center;
+}
+
+.car-image img {
+    width: 100%;
+    max-width: 260px;
+}
+
+/* BADGE */
+.badge {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ef4444;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* BODY */
+.car-body {
+    padding: 20px;
+}
+
+.car-body h3 {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+/* RATING */
+.rating {
+    text-align: center;
+    color: #facc15;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* PRICE */
+.price {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.price-item {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    justify-content: center;
+}
+
+.amount {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ef4444;
+}
+
+.unit {
+    font-size: 14px;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+/* BUTTON */
+.btn-book {
+    display: block;
+    text-align: center;
+    background: #ef4444;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-book:hover {
+    background: #dc2626;
+}
+
+/* =====================
+   KONTAK & FOOTER
+===================== */
+.btn-wa {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =====================
+   ANIMATION
+===================== */
+.fade-left {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: 1s ease;
+}
+
+.fade-right {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+        background-size: 600px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1e3a8a;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 15px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .logo img.s {
+        width: 150px;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    .car-body h3 {
+        font-size: 24px;
+    }
+
+    .amount {
+        font-size: 26px;
+    }
+}
